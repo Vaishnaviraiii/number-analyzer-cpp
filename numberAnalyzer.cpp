@@ -46,6 +46,16 @@ int countDigits(int n){
     }
     return count;
 }
+int fibonacciTillN(int n){
+    long long a=0, b=1, c;
+    cout<<"Fibonacci series up to"<<n<<" ";
+    while(a<=n){
+        cout<<a<<" ";
+        c=a+b;
+        a=b;
+        b=c;
+    }
+}
 int main(){
     int n, choice;
     char again = 'y';
@@ -57,7 +67,7 @@ int main(){
 
     do{
         cout<<"\nCurrent number: "<<n<<endl;
-        cout<<"\n1. Prime\n2. Sum\n3. Reverse\n4. Palindrome\n5. Count\n6. Exit\n";
+        cout<<"\n1. Prime\n2. Sum\n3. Reverse\n4. Palindrome\n5. Count\n6. Fibonacci\n7. Exit\n";
         cout<<"Enter a Choice: ";
         cin>> choice;
 
@@ -81,6 +91,13 @@ int main(){
             case 5:
             cout<<"Number of Digits: "<<countDigits(n);
             break;
+            case 6:
+            cout<<"Fibonacci series: ";
+            fibonacciTillN(n);
+            break;
+            case 7:
+            cout<<"Thank you for using the program!\n";
+            return 0;
         }
         cout<<"\nWant to enter a new number? (y/n): ";
         cin>> again;
@@ -89,7 +106,5 @@ int main(){
             cout<<"Enter new number: ";
             cin>>n;
         }
-    }while(choice != 6);
-    cout<<"Thank you for using the program!\n";
-    return 0;
+    }while(choice != 7);
 }
