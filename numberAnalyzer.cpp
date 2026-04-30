@@ -67,7 +67,7 @@ int main(){
 
     do{
         cout<<"\nCurrent number: "<<n<<endl;
-        cout<<"\n1. Prime\n2. Sum\n3. Reverse\n4. Palindrome\n5. Count\n6. Fibonacci\n7. Exit\n";
+        cout<<"\n1. Prime\n2. Sum\n3. Reverse\n4. Palindrome\n5. Count\n6. Fibonacci\n7. New number\n8. Exit\n";
         cout<<"Enter a Choice: ";
         cin>> choice;
 
@@ -96,15 +96,12 @@ int main(){
             fibonacciTillN(n);
             break;
             case 7:
+            cout<<"Enter new number: ";
+            cin>>n;
+            break;
+            case 8:
             cout<<"Thank you for using the program!\n";
             return 0;
         }
-        cout<<"\nWant to enter a new number? (y/n): ";
-        cin>> again;
-
-        if(again=='y'|| again=='Y'){
-            cout<<"Enter new number: ";
-            cin>>n;
-        }
-    }while(choice != 7);
+    }while(true);
 }
